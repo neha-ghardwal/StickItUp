@@ -1,38 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 *{
     margin: 0;
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     
 }
-.container{
-    width: 100%;
-    min-height: 100vh;
+:root{
+    --size:300px;
+
+}
+body{
+    width: auto;
+    height: auto;
+    background: linear-gradient(135deg, #cf9aff,#95c0ff);
+}
+header{
+    width: auto;
     background: linear-gradient(135deg, #cf9aff,#95c0ff);
     padding-top: 3%;
     padding-left: 8%;
-    
+      
 }
 
-
-.container h1{
+h1{
     display: flex;
     align-items: center;
     font-size: 35px;
 }
-/* .mode {
-    float:right;
-}
-.change {
+
+.container{
+    width: auto;
+    height: 100rem;
+    padding-top: 5%;
+    padding-left: 5%;
+    position: relative;
     display: flex;
-    cursor: pointer;
-    align-items: center;
-    font-size: 20px;
-    padding-top: 3%;
-    padding-left: 8%;
-    
-    
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+
 }
-.dark{
-    background-color: #222;
-    color: #e6e6e6;
-} */
+
+
+.container .notes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+.container .notes .note{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background: #813cc2;
+    cursor: pointer;
+    box-shadow: 0 15px 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    
+
+}
+.container .notes .note::before {
+    content: 'Double Click to delete';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #a09f9f;
+    padding: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container .notes .note:hover::before{
+    opacity: 1;
+
+}
+
+#create{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background: #e0c1fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    cursor: pointer;
+    box-shadow: 0 15px 20px;
+    /* padding: 10px; */
+
+}
+
+#create i {
+    position: absolute;
+    color: aliceblue;
+
+}
+
+.createbox{
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    z-index: 1000;
+    display: none;
+
+}
+
+.createbox textarea{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:var(--size);
+    height: var(--size);
+    outline: none;
+    font-size: 0.2em;
+    resize: none;
+
+}
+
+.details h3{
+    font-family: 'Dancing Script', cursive;
+    user-select: none;
+    font-size: 1.45rem;
+    
+
+}
